@@ -1008,6 +1008,12 @@ section{ padding: 5.5rem 0; position: relative; }
   border: none;
   justify-content: center;
 }
+.contact-form .form-status{
+  margin: 1rem 0 0;
+  font-size: .95rem;
+  text-align: center;
+}
+.contact-form .form-status.is-error{ color: #b42318; }
 
 @media(max-width: 600px){
   .form-row{ grid-template-columns: 1fr; }
@@ -1551,42 +1557,45 @@ footer{
         </ul>
       </div>
 
-      <form class="contact-form reveal" onsubmit="event.preventDefault(); alert('Vielen Dank — wir melden uns in Kürze!')">
+      <form class="contact-form reveal" name="beratung" method="POST" data-netlify="true" netlify-honeypot="website" id="beratungForm">
+        <input type="hidden" name="form-name" value="beratung">
+        <p hidden><label>Nicht ausfüllen: <input name="website" tabindex="-1" autocomplete="off"></label></p>
         <h3>Beratung anfragen</h3>
         <p>Kostenlos und unverbindlich — wir besprechen deine aktuelle Situation.</p>
 
         <div class="form-row">
           <div class="form-field">
-            <label>Vorname</label>
-            <input type="text" required>
+            <label for="bf-vorname">Vorname</label>
+            <input type="text" id="bf-vorname" name="vorname" autocomplete="given-name" required>
           </div>
           <div class="form-field">
-            <label>Nachname</label>
-            <input type="text" required>
+            <label for="bf-nachname">Nachname</label>
+            <input type="text" id="bf-nachname" name="nachname" autocomplete="family-name" required>
           </div>
         </div>
 
         <div class="form-field">
-          <label>E-Mail-Adresse</label>
-          <input type="email" required>
+          <label for="bf-email">E-Mail-Adresse</label>
+          <input type="email" id="bf-email" name="email" autocomplete="email" required>
         </div>
 
         <div class="form-field">
-          <label>Telefon</label>
-          <input type="tel">
+          <label for="bf-telefon">Telefon</label>
+          <input type="tel" id="bf-telefon" name="telefon" autocomplete="tel">
         </div>
 
         <div class="form-field">
-          <label>Nachricht</label>
-          <textarea placeholder="Beschreibe kurz dein Anliegen oder deine aktuelle Situation …"></textarea>
+          <label for="bf-nachricht">Nachricht</label>
+          <textarea id="bf-nachricht" name="nachricht" placeholder="Beschreibe kurz dein Anliegen oder deine aktuelle Situation …"></textarea>
         </div>
 
         <div class="form-consent">
-          <input type="checkbox" id="dsgvo" required>
+          <input type="checkbox" id="dsgvo" name="datenschutz" value="akzeptiert" required>
           <label for="dsgvo">Ich habe die <a href="#datenschutz" style="color:var(--primary-dark);text-decoration:underline">Datenschutzbestimmungen</a> zur Kenntnis genommen und bin mit ihnen einverstanden.</label>
         </div>
 
         <button type="submit" class="btn btn-primary">Absenden <span class="arrow">→</span></button>
+        <p class="form-status" id="beratungStatus" role="status" aria-live="polite" hidden></p>
       </form>
     </div>
   </div>
@@ -1815,6 +1824,31 @@ footer{
       nav.style.boxShadow = '0 4px 20px rgba(10, 26, 46, 0.08)';
     } else {
       nav.style.boxShadow = 'none';
+    }
+  });
+  const beratungForm = document.getElementById('beratungForm');
+  const beratungStatus = document.getElementById('beratungStatus');
+  beratungForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = beratungForm.querySelector('button[type="submit"]');
+    btn.disabled = true;
+    beratungStatus.hidden = true;
+    beratungStatus.classList.remove('is-error');
+    try {
+      const res = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(beratungForm)).toString()
+      });
+      if (!res.ok) throw new Error(res.status);
+      beratungForm.reset();
+      beratungStatus.textContent = 'Vielen Dank — wir melden uns in Kürze!';
+    } catch (err) {
+      beratungStatus.textContent = 'Leider ist etwas schiefgelaufen. Bitte versuche es erneut oder schreib uns direkt eine E-Mail.';
+      beratungStatus.classList.add('is-error');
+    } finally {
+      beratungStatus.hidden = false;
+      btn.disabled = false;
     }
   });
 </script>
