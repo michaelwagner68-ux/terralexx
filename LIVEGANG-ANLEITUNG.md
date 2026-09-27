@@ -78,6 +78,7 @@ Neu aufgenommen:
 
 - [x] **Foto Jürgen Aurin** bestätigt.
 - [x] **Preis KI-Potenzial-Workshop:** 3.900 € netto zzgl. USt., 3 Termine à 3 Std. vor Ort, Reisekosten innerhalb NRW inklusive. Eingetragen in Paketkarte, FAQ, Lexxi (Wissensbasis + KI-Anweisung) und englischer Version. Bei Änderung alle vier Stellen anpassen (Suche nach `3.900`).
+- [ ] **JARLEXX-Abschnitt** (nach „Leistungen“, Video `assets/jarlexx.mp4`): Die drei Nutzenpunkte sind Formulierungsvorschläge – bitte mit den echten Eigenschaften der Plattform abgleichen („herstellerneutral / keine Lizenzen“ wurde bereits überall ersetzt durch „anbieterunabhängig / an keinen KI-Anbieter gebunden, JARLEXX als Fundament“ – bitte bestätigen, dass JARLEXX verschiedene KI-Modelle unterstützt). Lexxi kennt nur die Grundaussage und bietet für Details eine Demo an.
 - [x] **Social Media:** Instagram (`instagram.com/terralexx.ai`) im Footer verlinkt und für Google hinterlegt. LinkedIn vorerst nicht.
 - [x] **Englische Version** – DE/EN-Umschalter oben in der Navigation. Die Wahl wird gespeichert; `https://www.terralexx.com/?lang=en` öffnet direkt Englisch (z. B. für LinkedIn). Besucher mit nicht-deutschem Browser sehen beim ersten Besuch automatisch Englisch. Lexxi antwortet in der Sprache des Besuchers.
   - **Texte ändern:** Deutsche Texte stehen wie gewohnt im HTML, die englischen im `EN`-Wörterbuch im Skript unten in `index.html` (Schlüssel = deutscher Text). **Wichtig:** Wer einen deutschen Text ändert, muss den Schlüssel im Wörterbuch mit ändern, sonst bleibt die Stelle auf Englisch deutsch.

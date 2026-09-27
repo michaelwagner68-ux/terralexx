@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-30 -30 714 160" role="img" aria-label="JARLEXX">
+  <defs>
+    <linearGradient id="gw" x1="0" y1="0" x2="654" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#9ff3ff"/><stop offset=".45" stop-color="#e9ecff"/>
+      <stop offset="1" stop-color="#ff9ee6"/>
+    </linearGradient>
+    <linearGradient id="gloww" x1="0" y1="0" x2="654" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#35e0ff"/><stop offset=".5" stop-color="#9d8cff"/><stop offset="1" stop-color="#ff4fd8"/>
+    </linearGradient>
+    <clipPath id="cw"><rect x="-20" y="0" width="694" height="100"/></clipPath>
+    <filter id="fw" x="-10%" y="-60%" width="120%" height="220%" filterUnits="objectBoundingBox"><feGaussianBlur stdDeviation="9"/></filter>
+  </defs>
+  <g filter="url(#fw)" opacity=".85"><g clip-path="url(#cw)" fill="none" stroke="url(#gloww)" stroke-width="20" stroke-linejoin="miter" stroke-miterlimit="8">
+    <path d="M0 92 H38 A20 20 0 0 0 58 72 V-20"/>
+    <path d="M82 120 L129 -12 L176 120"/>
+    <path d="M200 -20 V120"/>
+    <path d="M200 8 H242 A21 21 0 0 1 242 50 H200"/>
+    <path d="M230 50 L276 120"/>
+    <path d="M302 -20 V92 H358"/>
+    <path d="M380 8 H446"/>
+    <path d="M380 50 H446"/>
+    <path d="M380 92 H446"/>
+    <path d="M464 -10 L554 110"/>
+    <path d="M554 -10 L464 110"/>
+    <path d="M568 -10 L658 110"/>
+    <path d="M658 -10 L568 110"/>
+  </g></g>
+  <g clip-path="url(#cw)" fill="none" stroke="url(#gw)" stroke-width="16" stroke-linejoin="miter" stroke-miterlimit="8">
+    <path d="M0 92 H38 A20 20 0 0 0 58 72 V-20"/>
+    <path d="M82 120 L129 -12 L176 120"/>
+    <path d="M200 -20 V120"/>
+    <path d="M200 8 H242 A21 21 0 0 1 242 50 H200"/>
+    <path d="M230 50 L276 120"/>
+    <path d="M302 -20 V92 H358"/>
+    <path d="M380 8 H446"/>
+    <path d="M380 50 H446"/>
+    <path d="M380 92 H446"/>
+    <path d="M464 -10 L554 110"/>
+    <path d="M554 -10 L464 110"/>
+    <path d="M568 -10 L658 110"/>
+    <path d="M658 -10 L568 110"/>
+  </g>
+</svg>
